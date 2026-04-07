@@ -3,11 +3,11 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/comeet/refs/heads/main/apis.yml
 name: Comeet
 tags:
-  - Talent Acquisition
-  - Recruiting
-  - Jobs
   - Candidates
   - Interviews
+  - Jobs
+  - Recruiting
+  - Talent Acquisition
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -23,8 +23,8 @@ apis:
   - aid: comeet:comeet
     name: Comeet API
     tags:
-      - Talent Acquisition
       - Recruiting
+      - Talent Acquisition
     humanURL: https://developers.comeet.com/reference/careers-api-overview
     properties:
       - url: https://developers.comeet.com/reference/careers-api-overview
