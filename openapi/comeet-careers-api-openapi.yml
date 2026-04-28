@@ -1,0 +1,149 @@
+openapi: 3.1.0
+info:
+  title: Comeet Careers API
+  description: >-
+    The Comeet (Spark Hire Recruit) Careers API exposes a company's published
+    job positions for embedding on a custom careers website. Clients pass a
+    company UID and a public company token to retrieve the list of open
+    positions or details for a single position. The API powers Comeet's
+    Careers Website Widget and is used by partners such as job boards and
+    aggregators that syndicate Comeet customers' jobs.
+  version: '2.0'
+  contact:
+    name: Spark Hire Recruit
+    url: https://developers.comeet.com/
+externalDocs:
+  description: Careers API Overview
+  url: https://developers.comeet.com/reference/careers-api-overview
+servers:
+  - url: https://www.comeet.co/careers-api/2.0
+    description: Production
+tags:
+  - name: Positions
+    description: Published positions for a company.
+security:
+  - companyToken: []
+paths:
+  /company/{company_uid}/positions:
+    get:
+      operationId: listPositions
+      summary: List positions
+      description: >-
+        Retrieve the list of published positions for a company. The response
+        is empty when the company has no positions published.
+      tags:
+        - Positions
+      parameters:
+        - name: company_uid
+          in: path
+          required: true
+          description: The company UID assigned by Comeet.
+          schema:
+            type: string
+        - name: token
+          in: query
+          required: true
+          description: Public company token used to authorize the read.
+          schema:
+            type: string
+        - name: details
+          in: query
+          required: false
+          description: When true, include full position descriptions and requirements.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Array of published positions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Position'
+        '401':
+          description: Unauthorized (invalid or missing token).
+        '404':
+          description: Company not found.
+  /company/{company_uid}/positions/{position_uid}:
+    get:
+      operationId: getPosition
+      summary: Retrieve a position
+      description: Retrieve a single published position by its UID.
+      tags:
+        - Positions
+      parameters:
+        - name: company_uid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: position_uid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A single position.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Position'
+        '404':
+          description: Position not found.
+components:
+  securitySchemes:
+    companyToken:
+      type: apiKey
+      in: query
+      name: token
+      description: Public company token issued by Comeet for the Careers API.
+  schemas:
+    Position:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the position.
+        name:
+          type: string
+          description: Job title.
+        department:
+          type: string
+        location:
+          type: object
+          properties:
+            country:
+              type: string
+            city:
+              type: string
+            name:
+              type: string
+        company_department:
+          type: string
+        url_active_after:
+          type: string
+          format: date-time
+        url_comeet_hosted_page:
+          type: string
+          format: uri
+        time_id:
+          type: string
+        details:
+          type: object
+          properties:
+            description:
+              type: string
+              description: HTML or markdown job description.
+            requirements:
+              type: string
+        status:
+          type: string
+          enum: [published, draft, archived]

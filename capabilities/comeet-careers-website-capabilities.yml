@@ -1,0 +1,54 @@
+# Naftiko capabilities profile for the Comeet (Spark Hire Recruit) Careers API.
+# Capabilities reflect the surface most teams need to power a custom careers
+# site or syndicate published positions to job boards.
+provider: comeet
+name: Comeet Careers
+description: >-
+  Public, tokenized read API for a Comeet customer's published job
+  positions. Used to embed jobs in a careers website, syndicate to job
+  boards, or feed analytics pipelines.
+capabilities:
+  - id: comeet.positions.list
+    name: List positions
+    description: List all published positions for a company.
+    api: comeet:comeet-careers-api
+    inputs:
+      - company_uid
+      - token
+      - details
+    outputs:
+      - positions
+
+  - id: comeet.positions.get
+    name: Retrieve a position
+    description: Retrieve a single published position by UID.
+    api: comeet:comeet-careers-api
+    inputs:
+      - company_uid
+      - position_uid
+      - token
+    outputs:
+      - position
+
+  - id: comeet.positions.detailed
+    name: List positions with details
+    description: List positions including full description and requirements text.
+    api: comeet:comeet-careers-api
+    inputs:
+      - company_uid
+      - token
+      - details=true
+    outputs:
+      - positions
+      - description
+      - requirements
+
+  - id: comeet.positions.filter-by-location
+    name: Filter positions by location
+    description: Client-side filter of returned positions by city or country.
+    api: comeet:comeet-careers-api
+    inputs:
+      - company_uid
+      - token
+    outputs:
+      - positions[location]

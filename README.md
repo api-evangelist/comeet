@@ -1,42 +1,86 @@
 # Comeet (comeet)
-Comeet is a talent acquisition platform that helps companies streamline their recruitment process through automation and collaboration. Using advanced technology, Comeet allows employers to create job postings, manage candidate applications, schedule interviews, and communicate with team members all in one place. By centralizing all recruitment activities, Comeet enables companies to save time, improve efficiency, and make better hiring decisions. With features such as automated candidate screening, customizable pipelines, and real-time analytics, Comeet is revolutionizing the way organizations find and hire top talent.
+
+Comeet (now Spark Hire Recruit, after Spark Hire's acquisition of Comeet) is a collaborative talent acquisition platform that helps companies post jobs, source and screen candidates, schedule interviews, and coordinate hiring teams. Comeet exposes a public Careers API (used to embed published positions on a custom careers website), a Recruiting API (used by integration partners to manage candidates and pipeline events), and a Hires API (used to push new-hire data into HRIS/onboarding systems).
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/comeet/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consumer 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
 
-## Tags:
+## Tags
 
- - Talent Acquisition, Recruiting, Jobs, Candidates, Interviews
+- ATS
+- Candidates
+- Careers
+- Interviews
+- Jobs
+- Recruiting
+- Talent Acquisition
 
 ## Timestamps
 
-- **Created:** 2025-01-07 
-- **Modified:** 2025-03-01 
+- **Created:** 2025-01-07
+- **Modified:** 2026-04-26
 
 ## APIs
 
-### Comeet
-Comeet is a talent acquisition platform that streamlines the recruiting process for companies. It offers features such as job posting, candidate sourcing, interview scheduling, and collaborative hiring tools to help organizations efficiently find, evaluate, and hire top talent. Comeet's all-in-one platform allows recruiters and hiring managers to easily communicate, track, and manage candidates throughout the entire hiring process. With advanced analytics and reporting capabilities, Comeet helps companies make data-driven decisions to build strong teams and drive business growth.
+### Comeet Careers API
+Public, tokenized REST API that returns the list of published positions for a Comeet customer (and details for a single position). Powers custom-branded careers websites, embeds jobs into marketing pages, and syndicates openings to third-party job boards.
 
-**Human URL:** [ https://developers.comeet.com/reference/careers-api-overview]( https://developers.comeet.com/reference/careers-api-overview)
+**Human URL:** [https://developers.comeet.com/reference/careers-api-overview](https://developers.comeet.com/reference/careers-api-overview)
 
+#### Tags
 
-#### Tags:
-
- - Talent Acquisition, Recruiting, Jobs, Candidates, Interviews
+- Careers, Jobs, Recruiting
 
 #### Properties
 
-- [Documentation]( https://developers.comeet.com/reference/careers-api-overview)
+- [Documentation](https://developers.comeet.com/reference/careers-api-overview)
+- [OpenAPI](openapi/comeet-careers-api-openapi.yml)
+
+### Comeet Recruiting API
+Partner-scoped REST API for building on top of Spark Hire Recruit. Used by ATS unification platforms (Merge, Finch, etc.) to integrate Comeet companies, positions, candidates, and pipeline events into HR tooling.
+
+**Human URL:** [https://developers.comeet.com/reference/recruiting-api-overview](https://developers.comeet.com/reference/recruiting-api-overview)
+
+#### Tags
+
+- ATS, Candidates, Pipeline, Recruiting
+
+#### Properties
+
+- [Documentation](https://developers.comeet.com/reference/recruiting-api-overview)
+
+### Comeet Hires API
+Captures new-hire data from Comeet and pushes employee-profile information into HRIS, onboarding, and IT-provisioning systems the moment a candidate is marked as hired.
+
+**Human URL:** [https://developers.comeet.com/reference/hires-api-overview](https://developers.comeet.com/reference/hires-api-overview)
+
+#### Tags
+
+- HRIS, Hiring, Onboarding
+
+#### Properties
+
+- [Documentation](https://developers.comeet.com/reference/hires-api-overview)
+
+## Common Properties
+
+- [Website](https://www.comeet.com/)
+- [Developer Portal](https://developers.comeet.com/)
+- [Help Center](https://recruit-support.sparkhire.com/hc/en-us)
+- [Parent Company (Spark Hire)](https://www.sparkhire.com/)
+- [Privacy Policy](https://www.comeet.com/privacy-policy/)
+- [JSON-LD Context](json-ld/comeet-context.jsonld)
+- [Position JSON Schema](json-schema/comeet-position-schema.json)
+- [Spectral Ruleset](rules/comeet-rules.yml)
+- [Naftiko Capabilities](capabilities/comeet-careers-website-capabilities.yml)
 
 ## Maintainers
 
 **FN:** Kin Lane
 
-**Email:** info@apievangelist.com
-
+**Email:** kin@apievangelist.com

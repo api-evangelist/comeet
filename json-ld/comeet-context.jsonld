@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "comeet": "https://comeet.com/vocab/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Position": {
+      "@id": "schema:JobPosting",
+      "@context": {
+        "uid": "@id",
+        "name": "schema:title",
+        "department": {
+          "@id": "schema:hiringOrganization",
+          "@type": "xsd:string"
+        },
+        "location": "schema:jobLocation",
+        "company_department": {
+          "@id": "comeet:companyDepartment",
+          "@type": "xsd:string"
+        },
+        "url_active_after": {
+          "@id": "schema:datePosted",
+          "@type": "xsd:dateTime"
+        },
+        "url_comeet_hosted_page": {
+          "@id": "schema:url",
+          "@type": "@id"
+        },
+        "details": "schema:description",
+        "status": {
+          "@id": "comeet:positionStatus",
+          "@type": "xsd:string"
+        }
+      }
+    },
+
+    "Location": {
+      "@id": "schema:Place",
+      "@context": {
+        "country": "schema:addressCountry",
+        "city": "schema:addressLocality",
+        "name": "schema:name"
+      }
+    },
+
+    "Company": {
+      "@id": "schema:Organization",
+      "@context": {
+        "uid": "@id",
+        "name": "schema:name",
+        "token": {
+          "@id": "comeet:companyToken",
+          "@type": "xsd:string"
+        }
+      }
+    }
+  }
+}

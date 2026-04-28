@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/comeet/refs/heads/main/json-schema/comeet-position-schema.json",
+  "title": "Comeet Position",
+  "description": "Schema for a single published job position retrieved from the Comeet Careers API.",
+  "type": "object",
+  "required": ["uid", "name"],
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "Unique identifier for the position."
+    },
+    "name": {
+      "type": "string",
+      "description": "Job title."
+    },
+    "department": {
+      "type": "string"
+    },
+    "company_department": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "country": { "type": "string" },
+        "city": { "type": "string" },
+        "name": { "type": "string" }
+      }
+    },
+    "url_active_after": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "url_comeet_hosted_page": {
+      "type": "string",
+      "format": "uri"
+    },
+    "details": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "requirements": { "type": "string" }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["published", "draft", "archived"]
+    }
+  }
+}
