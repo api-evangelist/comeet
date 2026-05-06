@@ -4,153 +4,112 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Comeet
 providerId: comeet
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
-  - ATS
-  - Candidates
-  - Careers
-  - Interviews
-  - Jobs
+  - HR Tech
   - Recruiting
-  - Talent Acquisition
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+  - ATS
+description: Comeet has been rebranded as Spark Hire Recruit, an applicant-tracking system sold via annual
+  contract in three tiers (Recruit Pro, Recruit Growth, Recruit Enterprise). Pricing is per-organization,
+  scaled by employee count, with annual billing only. Companion video-interview and behavioral-assessment
+  products are sold separately. The Comeet/Spark Hire Recruit API is included with the ATS subscription.
+sources:
+  - https://www.sparkhire.com/pricing
+  - https://developers.comeet.com/
 plans:
-  - id: comeet-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Comeet API surface. Intended for evaluation, prototyping, and
-      low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+  - id: comeet-recruit-pro
+    name: Recruit Pro
+    type: subscription
+    description: Entry ATS tier for organizations up to 200 employees. Annual contract.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.comeet.co/careers-api/2.0
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://www.comeet.co/careers-api/2.0
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Comeet Careers API
-      - name: Comeet Recruiting API
-      - name: Comeet Hires API
-  - id: comeet-pro
-    name: Professional
-    type: paid
-    description: Production tier for Comeet. Provides higher quotas, priority support, and access to the
-      broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.comeet.co/careers-api/2.0
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://www.comeet.co/careers-api/2.0
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
+      - label: Monthly subscription (annual billing)
+        name: pro_monthly
+        type: subscription
+        metric: month
         limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://www.comeet.co/careers-api/2.0
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: '335.00'
+        userMultiplied: false
+      - label: AI resume reviews
+        name: pro_ai_reviews
+        type: quota
+        metric: review
+        limit: 6000
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: included
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Comeet Careers API
-      - name: Comeet Recruiting API
-      - name: Comeet Hires API
-  - id: comeet-enterprise
-    name: Enterprise
+      - name: Up to 200 employees
+      - name: AI resume review (6,000/yr)
+      - name: One-way video interviews
+      - name: Comeet/Spark Hire Recruit API access
+      - name: Annual contract only
+  - id: comeet-recruit-growth
+    name: Recruit Growth
+    type: subscription
+    description: Mid ATS tier for organizations up to 500 employees. Annual contract.
+    entries:
+      - label: Monthly subscription (annual billing)
+        name: growth_monthly
+        type: subscription
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '499.00'
+        userMultiplied: false
+      - label: AI resume reviews
+        name: growth_ai_reviews
+        type: quota
+        metric: review
+        limit: 24000
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: false
+    elements:
+      - name: Up to 500 employees
+      - name: AI resume review (24,000/yr)
+      - name: Predictive behavioral assessment
+      - name: One-way and live video interviews
+      - name: API access
+  - id: comeet-recruit-enterprise
+    name: Recruit Enterprise
     type: enterprise
-    description: Custom-negotiated tier for Comeet. Includes dedicated capacity, contractual SLAs, security
-      review, data residency options, and named technical account management.
+    description: Custom-priced ATS tier for organizations with 500+ employees.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Custom contract
+        name: enterprise_custom
+        type: subscription
+        metric: month
         limit: -1
         timeFrame: month
-        geo: configurable
-        domains:
-          - https://www.comeet.co/careers-api/2.0
+        geo: global
         unit: 1
-        price: custom
+        price: contact sales
         userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://www.comeet.co/careers-api/2.0
+      - label: AI resume reviews
+        name: enterprise_ai_reviews
+        type: quota
+        metric: review
+        limit: 36000
+        timeFrame: year
+        geo: global
         unit: 1
-        price: custom
+        price: included
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Comeet Careers API
-      - name: Comeet Recruiting API
-      - name: Comeet Hires API
+      - name: 500+ employees
+      - name: AI resume review (36,000/yr)
+      - name: Customer success support
+      - name: API access
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
