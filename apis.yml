@@ -13,7 +13,7 @@ tags:
 type: Index
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
-x-type: company
+kind: company
 created: '2025-01-07'
 modified: '2026-04-26'
 position: Consumer
@@ -122,7 +122,7 @@ common:
   - type: PrivacyPolicy
     url: https://www.comeet.com/privacy-policy/
   - url: json-ld/comeet-context.jsonld
-    type: JSON-LD
+    type: JSONLD
   - url: json-schema/comeet-position-schema.json
     type: JSONSchema
   - url: rules/comeet-rules.yml
