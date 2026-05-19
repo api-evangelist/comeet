@@ -1,0 +1,148 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Comeet Careers API — Positions
+  description: 'Comeet Careers API — Positions. 2 operations. Lead operation: List positions. Self-contained Naftiko capability
+    covering one Comeet business surface.'
+  tags:
+  - Comeet
+  - Positions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    COMEET_API_KEY: COMEET_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: careers-positions
+    baseUri: https://www.comeet.co/careers-api/2.0
+    description: Comeet Careers API — Positions business capability. Self-contained, no shared references.
+    resources:
+    - name: company-company_uid-positions
+      path: /company/{company_uid}/positions
+      operations:
+      - name: listpositions
+        method: GET
+        description: List positions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: company_uid
+          in: path
+          type: string
+          description: The company UID assigned by Comeet.
+          required: true
+        - name: token
+          in: query
+          type: string
+          description: Public company token used to authorize the read.
+          required: true
+        - name: details
+          in: query
+          type: boolean
+          description: When true, include full position descriptions and requirements.
+    - name: company-company_uid-positions-position_uid
+      path: /company/{company_uid}/positions/{position_uid}
+      operations:
+      - name: getposition
+        method: GET
+        description: Retrieve a position
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: company_uid
+          in: path
+          type: string
+          required: true
+        - name: position_uid
+          in: path
+          type: string
+          required: true
+        - name: token
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: token
+      value: '{{env.COMEET_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: careers-positions-rest
+    port: 8080
+    description: REST adapter for Comeet Careers API — Positions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/company/{company-uid}/positions
+      name: company-company-uid-positions
+      description: REST surface for company-company_uid-positions.
+      operations:
+      - method: GET
+        name: listpositions
+        description: List positions
+        call: careers-positions.listpositions
+        with:
+          company_uid: rest.company_uid
+          token: rest.token
+          details: rest.details
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/company/{company-uid}/positions/{position-uid}
+      name: company-company-uid-positions-position-uid
+      description: REST surface for company-company_uid-positions-position_uid.
+      operations:
+      - method: GET
+        name: getposition
+        description: Retrieve a position
+        call: careers-positions.getposition
+        with:
+          company_uid: rest.company_uid
+          position_uid: rest.position_uid
+          token: rest.token
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: careers-positions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Comeet Careers API — Positions. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-positions
+      description: List positions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: careers-positions.listpositions
+      with:
+        company_uid: tools.company_uid
+        token: tools.token
+        details: tools.details
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-position
+      description: Retrieve a position
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: careers-positions.getposition
+      with:
+        company_uid: tools.company_uid
+        position_uid: tools.position_uid
+        token: tools.token
+      outputParameters:
+      - type: object
+        mapping: $.
