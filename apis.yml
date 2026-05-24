@@ -122,6 +122,8 @@ common:
     type: Spectral
   - url: capabilities/comeet-careers-website-capabilities.yml
     type: NaftikoCapabilities
+  - type: LLMsTxt
+    url: https://developers.comeet.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
