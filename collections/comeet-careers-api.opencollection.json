@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Comeet Careers API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Positions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List positions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.comeet.co/careers-api/2.0/company/:company_uid/positions",
+            "params": [
+              {
+                "name": "company_uid",
+                "value": "",
+                "type": "path",
+                "description": "The company UID assigned by Comeet."
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query",
+                "description": "Public company token used to authorize the read."
+              },
+              {
+                "name": "details",
+                "value": "",
+                "type": "query",
+                "description": "When true, include full position descriptions and requirements."
+              }
+            ]
+          },
+          "docs": "Retrieve the list of published positions for a company. The response is empty when the company has no positions published."
+        },
+        {
+          "info": {
+            "name": "Retrieve a position",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.comeet.co/careers-api/2.0/company/:company_uid/positions/:position_uid",
+            "params": [
+              {
+                "name": "company_uid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "position_uid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a single published position by its UID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
