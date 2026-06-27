@@ -123,7 +123,7 @@ common:
     type: JSONSchema
   - url: rules/comeet-rules.yml
     type: Spectral
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developers.comeet.com/llms.txt
 maintainers:
   - FN: Kin Lane
