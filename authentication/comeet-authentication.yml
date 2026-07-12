@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/comeet-careers-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: companyToken
+  type: apiKey
+  in: query
+  parameter: token
+  description: Public company token issued by Comeet for the Careers API.
+  sources:
+  - openapi/comeet-careers-api-openapi.yml
