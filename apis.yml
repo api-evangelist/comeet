@@ -103,6 +103,8 @@ apis:
       - Triggering laptop and SaaS-account provisioning at hire time
       - Synchronizing offer-letter and start-date data into onboarding tools
 common:
+  - type: AgenticAccess
+    url: agentic-access/comeet-agentic-access.yml
   - type: DomainSecurity
     url: security/comeet-domain-security.yml
   - type: Authentication
