@@ -1,58 +1,47 @@
 openapi: 3.1.0
 info:
-  title: Comeet Careers API
-  description: >-
-    The Comeet (Spark Hire Recruit) Careers API exposes a company's published
-    job positions for embedding on a custom careers website. Clients pass a
-    company UID and a public company token to retrieve the list of open
-    positions or details for a single position. The API powers Comeet's
-    Careers Website Widget and is used by partners such as job boards and
-    aggregators that syndicate Comeet customers' jobs.
+  title: Comeet Careers Positions API
+  description: The Comeet (Spark Hire Recruit) Careers API exposes a company's published job positions for embedding on a custom careers website. Clients pass a company UID and a public company token to retrieve the list of open positions or details for a single position. The API powers Comeet's Careers Website Widget and is used by partners such as job boards and aggregators that syndicate Comeet customers' jobs.
   version: '2.0'
   contact:
     name: Spark Hire Recruit
     url: https://developers.comeet.com/
-externalDocs:
-  description: Careers API Overview
-  url: https://developers.comeet.com/reference/careers-api-overview
 servers:
-  - url: https://www.comeet.co/careers-api/2.0
-    description: Production
-tags:
-  - name: Positions
-    description: Published positions for a company.
+- url: https://www.comeet.co/careers-api/2.0
+  description: Production
 security:
-  - companyToken: []
+- companyToken: []
+tags:
+- name: Positions
+  description: Published positions for a company.
 paths:
   /company/{company_uid}/positions:
     get:
       operationId: listPositions
       summary: List positions
-      description: >-
-        Retrieve the list of published positions for a company. The response
-        is empty when the company has no positions published.
+      description: Retrieve the list of published positions for a company. The response is empty when the company has no positions published.
       tags:
-        - Positions
+      - Positions
       parameters:
-        - name: company_uid
-          in: path
-          required: true
-          description: The company UID assigned by Comeet.
-          schema:
-            type: string
-        - name: token
-          in: query
-          required: true
-          description: Public company token used to authorize the read.
-          schema:
-            type: string
-        - name: details
-          in: query
-          required: false
-          description: When true, include full position descriptions and requirements.
-          schema:
-            type: boolean
-            default: false
+      - name: company_uid
+        in: path
+        required: true
+        description: The company UID assigned by Comeet.
+        schema:
+          type: string
+      - name: token
+        in: query
+        required: true
+        description: Public company token used to authorize the read.
+        schema:
+          type: string
+      - name: details
+        in: query
+        required: false
+        description: When true, include full position descriptions and requirements.
+        schema:
+          type: boolean
+          default: false
       responses:
         '200':
           description: Array of published positions.
@@ -72,23 +61,23 @@ paths:
       summary: Retrieve a position
       description: Retrieve a single published position by its UID.
       tags:
-        - Positions
+      - Positions
       parameters:
-        - name: company_uid
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: position_uid
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: token
-          in: query
-          required: true
-          schema:
-            type: string
+      - name: company_uid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: position_uid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: token
+        in: query
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: A single position.
@@ -99,12 +88,6 @@ paths:
         '404':
           description: Position not found.
 components:
-  securitySchemes:
-    companyToken:
-      type: apiKey
-      in: query
-      name: token
-      description: Public company token issued by Comeet for the Careers API.
   schemas:
     Position:
       type: object
@@ -146,4 +129,16 @@ components:
               type: string
         status:
           type: string
-          enum: [published, draft, archived]
+          enum:
+          - published
+          - draft
+          - archived
+  securitySchemes:
+    companyToken:
+      type: apiKey
+      in: query
+      name: token
+      description: Public company token issued by Comeet for the Careers API.
+externalDocs:
+  description: Careers API Overview
+  url: https://developers.comeet.com/reference/careers-api-overview
