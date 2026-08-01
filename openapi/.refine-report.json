@@ -1,0 +1,14 @@
+{
+  "provider": "comeet",
+  "sources": [
+    "comeet-positions-api-openapi.yml"
+  ],
+  "outputs": [
+    "comeet-positions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
