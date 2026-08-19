@@ -1,0 +1,447 @@
+{
+  "item": [
+    {
+      "id": "0b81bb21-e448-4c11-8afe-0d9575d20665",
+      "name": "Positions",
+      "description": {
+        "content": "Published positions for a company.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "67dae970-7923-4672-858f-9dcb4319ff49",
+          "name": "List positions",
+          "request": {
+            "name": "List positions",
+            "description": {
+              "content": "Retrieve the list of published positions for a company. The response is empty when the company has no positions published.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "company",
+                ":company_uid",
+                "positions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) Public company token used to authorize the read."
+                },
+                {
+                  "disabled": false,
+                  "key": "details",
+                  "value": "false",
+                  "description": "When true, include full position descriptions and requirements."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "company_uid",
+                  "description": "(Required) The company UID assigned by Comeet."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2e60bdf-647a-43e2-bfe2-3771ef3c86e1",
+              "name": "Array of published positions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "company",
+                    ":company_uid",
+                    "positions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "details",
+                      "value": "false"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "company_uid",
+                      "description": "(Required) The company UID assigned by Comeet."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"uid\": \"string\",\n    \"name\": \"string\",\n    \"department\": \"string\",\n    \"location\": {\n      \"country\": \"string\",\n      \"city\": \"string\",\n      \"name\": \"string\"\n    },\n    \"company_department\": \"string\",\n    \"url_active_after\": \"2025-05-24T17:32:20.778Z\",\n    \"url_comeet_hosted_page\": \"https://FkIXGLesCC.fspcgRbUrzN,A\",\n    \"time_id\": \"string\",\n    \"details\": {\n      \"description\": \"string\",\n      \"requirements\": \"string\"\n    },\n    \"status\": \"published\"\n  },\n  {\n    \"uid\": \"string\",\n    \"name\": \"string\",\n    \"department\": \"string\",\n    \"location\": {\n      \"country\": \"string\",\n      \"city\": \"string\",\n      \"name\": \"string\"\n    },\n    \"company_department\": \"string\",\n    \"url_active_after\": \"2014-11-05T18:32:06.699Z\",\n    \"url_comeet_hosted_page\": \"https://owsmMGchyUvUPkhhrSfSFdaYtWnUvs.wymxeomP0WyDKb+iLOM0X.ToUiAHIPuAXNBE9MteGJjRL0ZepfGPBjtA36XMhBV4\",\n    \"time_id\": \"string\",\n    \"details\": {\n      \"description\": \"string\",\n      \"requirements\": \"string\"\n    },\n    \"status\": \"draft\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74053579-7423-4dbe-a8d4-59bfc0276534",
+              "name": "Unauthorized (invalid or missing token).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "company",
+                    ":company_uid",
+                    "positions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "details",
+                      "value": "false"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "company_uid",
+                      "description": "(Required) The company UID assigned by Comeet."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "762a6939-2157-4156-b4b7-fce53430f906",
+              "name": "Company not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "company",
+                    ":company_uid",
+                    "positions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "details",
+                      "value": "false"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "company_uid",
+                      "description": "(Required) The company UID assigned by Comeet."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2c62ab2-3f5a-453f-8170-88748241679e",
+          "name": "Retrieve a position",
+          "request": {
+            "name": "Retrieve a position",
+            "description": {
+              "content": "Retrieve a single published position by its UID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "company",
+                ":company_uid",
+                "positions",
+                ":position_uid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "company_uid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "position_uid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f92b97e5-3f3b-4650-b22f-969c6bd0f6fc",
+              "name": "A single position.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "company",
+                    ":company_uid",
+                    "positions",
+                    ":position_uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "company_uid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "position_uid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uid\": \"string\",\n  \"name\": \"string\",\n  \"department\": \"string\",\n  \"location\": {\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"name\": \"string\"\n  },\n  \"company_department\": \"string\",\n  \"url_active_after\": \"2000-04-12T14:54:26.313Z\",\n  \"url_comeet_hosted_page\": \"http://ADLwlkCdwsOxDraNwtuvZUAsFFyWvayN.yenZ78WMETGrHEihg1IQ56vnmEpkB1ueIq+mf\",\n  \"time_id\": \"string\",\n  \"details\": {\n    \"description\": \"string\",\n    \"requirements\": \"string\"\n  },\n  \"status\": \"published\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa6d99b8-efce-49b7-acce-a2cc5c85102f",
+              "name": "Position not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "company",
+                    ":company_uid",
+                    "positions",
+                    ":position_uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "company_uid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "position_uid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.comeet.co/careers-api/2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cf3762c5-62e9-4b36-bd55-09e74042df1b",
+    "name": "Comeet Careers Positions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Comeet (Spark Hire Recruit) Careers API exposes a company's published job positions for embedding on a custom careers website. Clients pass a company UID and a public company token to retrieve the list of open positions or details for a single position. The API powers Comeet's Careers Website Widget and is used by partners such as job boards and aggregators that syndicate Comeet customers' jobs.\n\nContact Support:\n Name: Spark Hire Recruit",
+      "type": "text/plain"
+    }
+  }
+}

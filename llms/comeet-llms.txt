@@ -1,0 +1,71 @@
+# Spark Hire Recruit For Developers Documentation
+
+> Documentation for Spark Hire Recruit For Developers
+
+## API Reference
+- [Careers API Overview](https://developers.comeet.com/reference/careers-api-overview.md)
+- [Best Practices](https://developers.comeet.com/reference/sharing-best-practices.md)
+- [Positions](https://developers.comeet.com/reference/careers-position-model.md)
+- [List All Positions](https://developers.comeet.com/reference/careers-api-list-all-positions.md): Retrieve the list of published positions of the company. Make sure there are a few published positions otherwise the returned data set will be empty.  Returns a list of [Positions](ref:careers-position-model).
+- [Retrieve a Position](https://developers.comeet.com/reference/retrieve-a-position-new.md): Returns a [Position](ref:careers-position-model).
+- [Widgets](https://developers.comeet.com/reference/embedding-widgets.md)
+- [Application Form Widget](https://developers.comeet.com/reference/application-form-widget.md)
+- [Social Widget](https://developers.comeet.com/reference/social-widget.md)
+- [Request Consent for Cookies](https://developers.comeet.com/reference/cookies-consent.md)
+- [Multiple Brands](https://developers.comeet.com/reference/multiple-brands.md)
+- [Wix Website Integration](https://developers.comeet.com/reference/wix-website-integration.md)
+- [FAQ](https://developers.comeet.com/reference/faq.md)
+- [Changelog](https://developers.comeet.com/reference/changelog-3.md)
+- [Recruiting API Overview](https://developers.comeet.com/reference/recruiting-api-overview.md)
+- [Getting Started: Recruit Customers](https://developers.comeet.com/reference/getting-started-comeet-customers.md)
+- [Getting Started: Integration Partners](https://developers.comeet.com/reference/getting-started-integration-partners.md)
+- [Authorization](https://developers.comeet.com/reference/authorization.md)
+- [API Permissions](https://developers.comeet.com/reference/permissions.md)
+- [Pull Data for Reports](https://developers.comeet.com/reference/pull-data-for-reports.md)
+- [Candidate Schema](https://developers.comeet.com/reference/candidates-copy.md)
+- [Create a Candidate](https://developers.comeet.com/reference/create-a-candidate-new.md): Creates new candidate for a specified position. Returns the [Candidate](ref:candidate-model).
+- [List All Candidates](https://developers.comeet.com/reference/list-all-candidates-new.md): Read a list of All candidates
+- [Retrieve a Candidate](https://developers.comeet.com/reference/retrieve-a-candidate.md): Read a specific [Candidate](ref:candidate-model).
+- [Retrieve Candidate Files](https://developers.comeet.com/reference/retrieve-candidate-files.md): Read a specific [Candidate](ref:candidate-model)'s list of files on the candidate’s profile under the Files tab.
+- [Add a File ](https://developers.comeet.com/reference/add-file-to-candidate.md): Upload a single file to an existing candidate.
+- [Add a Resume](https://developers.comeet.com/reference/add-resume-to-candidate.md): Upload a resume to an existing candidate.
+- [Find Duplicate Candidates and Leads](https://developers.comeet.com/reference/find-duplicate-candidates-1.md): Find whether a candidate or lead already exists in the company's database.
+- [List Deleted Candidates or Leads](https://developers.comeet.com/reference/list-deleted-candidates.md): Read a list of deleted candidate and lead UIDs.
+- [Lead Schema](https://developers.comeet.com/reference/lead-schema.md)
+- [List All Leads](https://developers.comeet.com/reference/list-all-leads.md): Read a list of [Leads](ref:lead-model).
+- [Create a Lead](https://developers.comeet.com/reference/create-a-lead.md): Creates a new lead for a specified position. Returns the [Lead](ref:lead-model).
+- [Retrieve a Lead](https://developers.comeet.com/reference/retrieve-a-lead.md): Read a specific [Lead](ref:lead-model).
+- [Conversation Schema](https://developers.comeet.com/reference/conversations-copy.md)
+- [Person Schema](https://developers.comeet.com/reference/person-copy.md)
+- [Location Schema](https://developers.comeet.com/reference/locations-copy.md)
+- [Questionnaires Schema](https://developers.comeet.com/reference/questionnaires-schema-copy.md)
+- [List All Questionnaires](https://developers.comeet.com/reference/list-all-questionnaires.md): Read a list of [Questionnaires](ref:questionnaires-model).
+- [Position Schema](https://developers.comeet.com/reference/positions-copy.md)
+- [List All Positions](https://developers.comeet.com/reference/list-all-positions.md): Read a list of [Positions](ref:position-model).
+- [Create a Position](https://developers.comeet.com/reference/create-a-position.md): Create a [Position](ref:position-model).
+- [Clone a Position](https://developers.comeet.com/reference/clone-a-position.md): Clone a [Position](ref:position-model) from a position template.
+- [Update a Position](https://developers.comeet.com/reference/update-a-position.md): Update properties of an existing position . Returns the [Position](ref:position-model).
+- [Position Updates Webhook](https://developers.comeet.com/reference/position-updates.md): Webhook, returns a [Position](ref:careers-position-model).
+- [Opening Schema](https://developers.comeet.com/reference/openings-copy.md)
+- [Audit logs](https://developers.comeet.com/reference/audit-logs.md)
+- [Changelog](https://developers.comeet.com/reference/changelog.md)
+- [Evaluation API Overview](https://developers.comeet.com/reference/evaluation-api-overview.md)
+- [Getting Started: Recruit Customers](https://developers.comeet.com/reference/getting-started-comeet-customers-1.md)
+- [Getting Started: Integration Partners](https://developers.comeet.com/reference/getting-started-integration-partners-1.md)
+- [Authorization](https://developers.comeet.com/reference/authorization-1.md)
+- [1. List All Tests](https://developers.comeet.com/reference/get-list-of-tests.md)
+- [2. Submit a Candidate for Evaluation](https://developers.comeet.com/reference/submit-candidate-for-evaluation-1.md)
+- [3. Submit an Evaluation](https://developers.comeet.com/reference/submit-an-evaluation.md)
+- [Handling Errors](https://developers.comeet.com/reference/errors.md)
+- [Hires API Overview](https://developers.comeet.com/reference/hires-api-overview.md)
+- [Candidate model](https://developers.comeet.com/reference/hires-api-candidate-model.md)
+- [1. Request hire questionnaire](https://developers.comeet.com/reference/1-request-hire-questionnaire.md)
+- [2. Create an employee](https://developers.comeet.com/reference/2-create-employee.md)
+- [Handling Errors](https://developers.comeet.com/reference/handling-errors.md)
+- [Changelog](https://developers.comeet.com/reference/changelog-1.md)
+- [Job Board API Overview](https://developers.comeet.com/reference/job-board-api-overview.md)
+- [Positions Feed](https://developers.comeet.com/reference/positions-feed.md)
+- [Getting Started](https://developers.comeet.com/reference/wordpress-plugin.md)
+- [Customization Options](https://developers.comeet.com/reference/customization-options.md)
+- [FAQ](https://developers.comeet.com/reference/frequently-asked-questions.md)
+- [License](https://developers.comeet.com/reference/license.md)
