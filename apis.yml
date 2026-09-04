@@ -31,23 +31,24 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: paid
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Paid · Self-serve signup
-  confidence: high
+  label: Paid
+  confidence: medium
   source:
   - plans
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/comeet.png
 access: 3rd-Party
 kind: company
 created: '2025-01-07'
 modified: '2026-05-19'
-position: Consumer
+position: Consuming
 description: >-
   Comeet (now Spark Hire Recruit, after Spark Hire's acquisition of Comeet) is a collaborative talent acquisition
   platform that helps companies post jobs, source and screen candidates, schedule interviews, and coordinate hiring
