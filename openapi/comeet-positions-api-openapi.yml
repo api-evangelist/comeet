@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Comeet Careers Positions API
   description: The Comeet (Spark Hire Recruit) Careers API exposes a company's published job positions for embedding on a custom careers website. Clients pass a company UID and a public company token to retrieve the list of open positions or details for a single position. The API powers Comeet's Careers Website Widget and is used by partners such as job boards and aggregators that syndicate Comeet customers' jobs.
