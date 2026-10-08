@@ -126,6 +126,12 @@ apis:
   - type: Documentation
     url: https://developers.comeet.com/reference/careers-api-overview
 common:
+  - type: Plans
+    url: plans/comeet-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/comeet-rate-limits.yml
+  - type: FinOps
+    url: finops/comeet-finops.yml
   - type: CapabilityMap
     url: capabilities/comeet-capability-edges.yml
     name: Comeet Business Capability Map
