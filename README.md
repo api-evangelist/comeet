@@ -1,4 +1,4 @@
-# Comeet (comeet)
+# Comeet
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,103 +66,136 @@
 
 Comeet (now Spark Hire Recruit, after Spark Hire's acquisition of Comeet) is a collaborative talent acquisition platform that helps companies post jobs, source and screen candidates, schedule interviews, and coordinate hiring teams. Comeet exposes a public Careers API (used to embed published positions on a custom careers website), a Recruiting API (used by integration partners to manage candidates and pipeline events), and a Hires API (used to push new-hire data into HRIS/onboarding systems).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/comeet/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/comeet/refs/heads/main/apis.yml)
+**Areas:** Applicant Tracking · Candidates · Careers · Interviews · Job · Recruiting · Talent Acquisition
 
-## Scope
+## Comeet on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Comeet is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/comeet/](https://apis.io/providers/comeet/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- ATS
-- Candidates
-- Careers
-- Interviews
-- Jobs
-- Recruiting
-- Talent Acquisition
+- [Comeet Recruiting API](https://apis.io/apis/comeet/comeet-recruiting-api/) — The Recruiting API is a partner-scoped REST API for building on top of Spark Hire Recruit (Comeet). It supports listing companies, positions, candidates,…
+- [Comeet Hires API](https://apis.io/apis/comeet/comeet-hires-api/) — The Hires API captures new-hire data from Comeet and pushes employee profile information into downstream HRIS, onboarding, and provisioning systems. It is…
+- [Comeet Positions API](https://apis.io/apis/comeet/comeet-positions-api/) — Published positions for a company.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-01-07
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Comeet Careers API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Public, tokenized REST API that returns the list of published positions for a Comeet customer (and details for a single position). Used to power custom-branded careers websites, embed jobs into marketing pages, and syndicate openings to third-party job boards. Each company's data is scoped by a company UID and a public company token issued by Comeet.
+- [Comeet Agentic Access](https://apis.io/agentic-access/comeet/comeet-agentic-access/)
 
-- **Human URL:** [https://developers.comeet.com/reference/careers-api-overview](https://developers.comeet.com/reference/careers-api-overview)
-- **Base URL:** `https://www.comeet.co/careers-api/2.0`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Careers
-- Jobs
-- Recruiting
+- [Comeet Position](https://apis.io/schemas/comeet/comeet-position/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://developers.comeet.com/reference/careers-api-overview)
-- [OpenAPI](openapi/comeet-careers-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/comeet-careers-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/comeet-careers-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Linked-data contexts for the provider's vocabulary.
 
-### Comeet Recruiting API
+- [Comeet Context](https://apis.io/jsonld/comeet/comeet-context/)
 
-The Recruiting API is a partner-scoped REST API for building on top of Spark Hire Recruit (Comeet). It supports listing companies, positions, candidates, and pipeline events, and is the underlying interface used by ATS unification platforms (Merge, Finch, etc.) to integrate Comeet data into HR tooling. Access is granted to approved integration partners.
+#### Collections (2)
 
-- **Human URL:** [https://developers.comeet.com/reference/recruiting-api-overview](https://developers.comeet.com/reference/recruiting-api-overview)
+Postman and Open Collection request collections.
 
-#### Tags
+- [Comeet Careers API](https://apis.io/collections/comeet/open-comeet-careers-api/)
+- [Comeet Careers Positions API](https://apis.io/collections/comeet/open-comeet-positions-api/)
 
-- ATS
-- Candidates
-- Pipeline
-- Recruiting
+#### Governance rules (2)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://developers.comeet.com/reference/recruiting-api-overview)
-- [Postman Collection](collections/comeet-careers-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/comeet-careers-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Comeet — jsonschema rules](https://apis.io/rules/comeet/comeet-jsonschema-spectral-rules/)
+- [Comeet API Rules](https://apis.io/rules/comeet/comeet-rules/)
 
-### Comeet Hires API
+#### Security (2)
 
-The Hires API captures new-hire data from Comeet and pushes employee profile information into downstream HRIS, onboarding, and provisioning systems. It is typically used to trigger an onboarding workflow the moment a candidate is marked as hired.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://developers.comeet.com/reference/hires-api-overview](https://developers.comeet.com/reference/hires-api-overview)
+- [Comeet Authentication](https://apis.io/security/comeet/comeet-authentication/)
+- [Comeet Domain Security](https://apis.io/security/comeet/comeet-domain-security/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- HRIS
-- Hiring
-- Onboarding
+Published plans, tiers and prices.
 
-#### Properties
+- [Comeet Plans Pricing](https://apis.io/plans/comeet/comeet-plans-pricing/)
 
-- [Documentation](https://developers.comeet.com/reference/hires-api-overview)
-- [Postman Collection](collections/comeet-careers-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/comeet-careers-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-## Common Properties
+Published request limits.
 
-- [GitHub Organization](https://github.com/ComeetCo)
-- [LinkedIn](https://www.linkedin.com/company/comeet-hire-better-together)
+- [Comeet Rate Limits](https://apis.io/rate-limits/comeet/comeet-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Comeet Finops](https://apis.io/finops/comeet/comeet-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.comeet.com/)
-- [Portal](https://developers.comeet.com/)
-- [Help Center](https://recruit-support.sparkhire.com/hc/en-us)
-- [Parent Company](https://www.sparkhire.com/)
-- [Privacy Policy](https://www.comeet.com/privacy-policy/)
-- [JSON-LD](json-ld/comeet-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [JSON Schema](json-schema/comeet-position-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [Spectral Rules](rules/comeet-rules.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
-- [L L Ms Txt](https://developers.comeet.com/llms.txt)
+- [Privacy policy](https://www.comeet.com/privacy-policy/)
+- [GitHub](https://github.com/ComeetCo)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 31.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 53.0 |
+| Contract governance | 13.6 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 7.9 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/comeet/](https://apis.io/providers/comeet/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Comeet: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/comeet/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
